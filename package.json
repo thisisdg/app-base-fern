@@ -25,6 +25,9 @@
     "NodeJS"
   ],
   "author": "Dhruv Goel",
+  "contributors": [
+    "Yash Karanke (dex.papa@gmail.com) <dextel2.surge.sh>"
+  ]
   "license": "ISC",
   "dependencies": {
     "concurrently": "^5.3.0",
