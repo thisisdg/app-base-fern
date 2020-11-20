@@ -41,6 +41,7 @@
 ##Check List:
 - [ ] Use Eslint coding conventions
 - [ ] Update release editions in the `README.md` file
+- [ ] Dont add irrelevant libraries as they just increase the size. Try to find those packages/libraries that solves maximum issues or use and existing one.
 
 ##Issues & Questions:
 - [ ] Compilation is successfull but InputField component HTML is never returned in the DOM
