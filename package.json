@@ -1,0 +1,28 @@
+{
+  "name": "reactcrud",
+  "version": "1.0.0",
+  "description": "Architecture of REact + Node project that is going to be used for CRUD operations",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "React",
+    "JS",
+    "Node",
+    "JS",
+    "JS",
+    "CRUD",
+    "crud",
+    "reactjs",
+    "nodejs",
+    "ReactJS",
+    "NodeJS"
+  ],
+  "author": "Dhruv Goel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
