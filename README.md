@@ -1,6 +1,6 @@
-#DOCUMENTATION
+# DOCUMENTATION
 
-##Setup:
+## Setup:
 1.  `npx create-react-app client`
 2.  Create server.js in the parent folder of `client` directory
 3.  `npm init` in the parent folder of `client` directory
@@ -16,14 +16,14 @@
 9.  Add `Barrel` to the `/client /src /components` directory
 10. 
 
-##Dependencies:
+## Dependencies:
 | Dependency | Version |
 | ---------- | ------- |
 | Dependency 1 | version 1 |
 | Dependency 2 | version 2 |
 ~~| Dependency 3 | version 3 |~~
 
-##Folder names and their usage:
+## Folder names and their usage:
 1.  `/client` - Contains the react app
 2.  `/client /public` - Contains files like manifest.js, robots.txt, favicons etc.
 3.  `/client /src` - Contains the entry files for the react app
@@ -38,11 +38,11 @@
 12. `/client /src /node_modules` - Modules which will be used by our React App
 13. `/node_modules` - Contains node modules which are used by the Node and Express for our backend.
 
-##Check List:
+## Check List:
 - [ ] Use Eslint coding conventions
 - [ ] Update release editions in the `README.md` file
 - [ ] Dont add irrelevant libraries as they just increase the size. Try to find those packages/libraries that solves maximum issues or use and existing one.
 
-##Issues & Questions:
+## Issues & Questions:
 - [ ] Compilation is successfull but InputField component HTML is never returned in the DOM
 - [ ] What is the meaning of getElementById in component js?

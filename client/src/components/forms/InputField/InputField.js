@@ -8,9 +8,5 @@ class InputField extends React.Component {
 	}
 }
 
-ReactDOM.render(
-	<InputField />,
-	document.getElementById('hello')
-);
 
 export default InputField;
