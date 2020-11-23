@@ -46,3 +46,5 @@
 ## Issues & Questions:
 - [ ] Compilation is successfull but InputField component HTML is never returned in the DOM
 - [ ] What is the meaning of getElementById in component js?
+- [ ] Firebase setup
+- [ ] How should we send the data to Firebase?
