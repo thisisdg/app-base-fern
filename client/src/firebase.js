@@ -11,6 +11,6 @@ const config = {
     measurementId: "G-YBW93ZR3K1"
 }
 
+var fireDB = firebase.initializeApp(config);
 
-var fireDb = firebase.initializeApp(config);
-export default fireDb;
+export default fireDB;

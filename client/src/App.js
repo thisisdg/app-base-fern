@@ -1,13 +1,12 @@
-import './App.css';
-import Form from './components/forms/Form';
+import Contacts from "./components/Contacts";
+
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-          <div id="hello"></div>
-          Learn React
-        <Form/>
-      </header>
+    <div className="row">
+      <div className="col-md-8 offset-md-2">
+        <Contacts></Contacts>
+      </div>
     </div>
   );
 }
