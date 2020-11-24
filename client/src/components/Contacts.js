@@ -1,16 +1,15 @@
 import React from 'react'
 import ContactForm from "./ContactForm";
-import fireDB from "../firebase";
+import fireDb from "../utils/firebase";
 
 const Contacts = () => {
-
     const addOrEdit = obj => {
-        fireDB.child('contacts').push(
+        fireDb.child("contacts").push(
             obj,
             err => {
-                if(err) console.log(err);
+                console.log(err);
             }
-        );
+        )
     }
 
 
