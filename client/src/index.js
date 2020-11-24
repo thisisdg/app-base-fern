@@ -3,14 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 // import { formField } from './components';
-import InputField from './components/forms/InputField/InputField.js';
 // import FormContainer from './components';
 import reportWebVitals from './utils/reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <InputField />
   </React.StrictMode>,
   document.getElementById('root')
 );
