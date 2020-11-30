@@ -1,18 +1,13 @@
 import React from 'react'
 import ContactForm from "./ContactForm";
-import fireDb from "../utils/firebase";
+import firebase from "../utils/firebase";
 
 const Contacts = () => {
+	
     const addOrEdit = obj => {
-        fireDb.child("contacts").push(
-            obj,
-            err => {
-                console.log(err);
-            }
-        )
-    }
-
-
+        const ContactRef = firebase.database().ref("Contacts");
+        ContactRef.push(obj);
+    };
     return (
         <>
             <div className="jumbotron jumbotron-fluid">

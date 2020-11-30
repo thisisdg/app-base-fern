@@ -21,7 +21,7 @@ const ContactForm = (props) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    props.addOrEdit(values);
+	props.addOrEdit(values);
   };
   return (
     <form autoComplete="off" onSubmit={handleFormSubmit}>
@@ -33,9 +33,9 @@ const ContactForm = (props) => {
         </div>
         <input
           className="form-control"
-          name="fullName"
+          name="fullname"
           placeholder="Full Name"
-          value={values.fullName}
+          value={values.fullname}
           onChange={handleInputChange}
         />
       </div>
