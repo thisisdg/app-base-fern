@@ -48,4 +48,5 @@
 - [ ] What is the meaning of getElementById in component js?
 - [x] Firebase setup
 - [x] How should we send the data to Firebase?
-- [ ] Filtering data, getting it back to the app
+- [x] Filtering data, getting it back to the app
+- [ ] Displaying the data on the app
