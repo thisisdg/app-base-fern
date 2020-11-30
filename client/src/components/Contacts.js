@@ -7,7 +7,8 @@ const Contacts = () => {
     const addOrEdit = obj => {
         const ContactRef = firebase.database().ref("Contacts");
         ContactRef.push(obj);
-    };
+	};
+	
     return (
         <>
             <div className="jumbotron jumbotron-fluid">
