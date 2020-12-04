@@ -11,7 +11,7 @@ const Contacts = () => {
 	useEffect(()=>{
 		const firebaseRef = firebase.database().ref("Contacts");
 		firebaseRef.on("value",(snapshot)=>{
-			console.log(snapshot.val());
+            console.table(snapshot.val());
 		})
 	});
 
