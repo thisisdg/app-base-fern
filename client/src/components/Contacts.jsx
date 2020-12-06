@@ -21,13 +21,6 @@ const Contacts = () => {
     const addOrEdit = obj => {
         const ContactRef = firebase.database().ref("Contacts");
         ContactRef.push(obj);
-        ContactRef.set("I'm writing data", function(error) {
-            if (error) {
-              alert("Data could not be saved." + error);
-            } else {
-              alert("Data saved successfully.");
-            }
-          });
 	};
 	
     return (
