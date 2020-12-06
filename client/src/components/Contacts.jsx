@@ -20,7 +20,15 @@ const Contacts = () => {
 	 */
     const addOrEdit = obj => {
         const ContactRef = firebase.database().ref("Contacts");
-        ContactRef.push(obj);
+        ContactRef.push(obj, function(e) {
+            console.log(e);
+            if(e !== null) {
+                // TODO : print sucess message
+            }
+            else {
+                // TODO : print failure message
+            }
+        });
 	};
 	
     return (
