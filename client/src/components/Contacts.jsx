@@ -9,10 +9,8 @@ const Contacts = () => {
 	 * @description Fetching all the `Object`s from the database i.e. referenced
 	 */
 	useEffect(()=>{
-		const firebaseRef = firebase.database().ref("Contacts");
-		firebaseRef.on("value",(snapshot)=>{
-            console.table(snapshot.val());
-		})
+        // eslint-disable-next-line no-unused-vars
+        const firebaseRef = firebase.database().ref("Contacts");        
 	});
 
 	/**
@@ -23,6 +21,13 @@ const Contacts = () => {
     const addOrEdit = obj => {
         const ContactRef = firebase.database().ref("Contacts");
         ContactRef.push(obj);
+        ContactRef.set("I'm writing data", function(error) {
+            if (error) {
+              alert("Data could not be saved." + error);
+            } else {
+              alert("Data saved successfully.");
+            }
+          });
 	};
 	
     return (

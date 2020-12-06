@@ -50,3 +50,4 @@
 - [x] How should we send the data to Firebase?
 - [x] Filtering data, getting it back to the app
 - [ ] Displaying the data on the app
+- [ ] Display success/failure bootstrap modal

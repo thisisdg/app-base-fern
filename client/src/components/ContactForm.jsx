@@ -82,6 +82,7 @@ const ContactForm = (props) => {
         />
 
         <div className="form-group">
+          <br/>
           <input
             type="submit"
             value="Save"
