@@ -20,9 +20,13 @@ const ContactForm = (props) => {
   };
 
   const handleFormSubmit = (e) => {
-    e.preventDefault();
-	  props.addOrEdit(values);
-	  setValues(initialFieldValues);
+	  	e.preventDefault();
+		if(props.addOrEdit(values).path.pieces_[0] === "Contacts"){
+			setValues(initialFieldValues);
+			alert("this works");
+		} else {
+			alert("this not works");
+		}
   };
   return (
     <form autoComplete="off" onSubmit={handleFormSubmit}>

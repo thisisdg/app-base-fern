@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React, {useEffect} from 'react'
 import ContactForm from "./ContactForm";
 import firebase from "../utils/firebase";
 
 const Contacts = () => {
+
 	
 	/**
 	 * @author Yash Karanke
@@ -10,25 +12,18 @@ const Contacts = () => {
 	 */
 	useEffect(()=>{
         // eslint-disable-next-line no-unused-vars
+        // Getting the data from firebase
         const firebaseRef = firebase.database().ref("Contacts");        
-	});
+    });
 
-	/**
+    /**
 	 * @author Yash Karanke
 	 * @param {Object} obj : Object
 	 * @description Creates a database, if does not exists, and inserts the `Object` into the database
 	 */
     const addOrEdit = obj => {
         const ContactRef = firebase.database().ref("Contacts");
-        ContactRef.push(obj, function(e) {
-            console.log(e);
-            if(e !== null) {
-                // TODO : print sucess message
-            }
-            else {
-                // TODO : print failure message
-            }
-        });
+		return ContactRef.push(obj);
 	};
 	
     return (
