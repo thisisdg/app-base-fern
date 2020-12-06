@@ -23,9 +23,8 @@ const ContactForm = (props) => {
 	  	e.preventDefault();
 		if(props.addOrEdit(values).path.pieces_[0] === "Contacts"){
 			setValues(initialFieldValues);
-			alert("this works");
 		} else {
-			alert("this not works");
+
 		}
   };
   return (
