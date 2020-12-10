@@ -9,7 +9,6 @@
     "server": "nodemon server.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
-
   },
   "keywords": [
     "React",

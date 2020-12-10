@@ -5,15 +5,16 @@ import firebase from "../utils/firebase";
 
 const Contacts = () => {
 
-	
-	/**
+
+    /**
 	 * @author Yash Karanke
 	 * @description Fetching all the `Object`s from the database i.e. referenced
 	 */
 	useEffect(()=>{
         // eslint-disable-next-line no-unused-vars
         // Getting the data from firebase
-        const firebaseRef = firebase.database().ref("Contacts");        
+        const firebaseRef = firebase.database().ref("Contacts");     
+        document.title = `Contact Book v2020`;   
     });
 
     /**
