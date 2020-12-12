@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
 const ContactForm = (props) => {
-	
+
   const initialFieldValues = {
     fullname: "",
     mobile: "",
     email: "",
     address: "",
+    currentDate: new Date().toISOString().substring(0,10)
   };
 
   var [values, setValues] = useState(initialFieldValues);
@@ -19,14 +20,12 @@ const ContactForm = (props) => {
     });
   };
 
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (props.addOrEdit(values).path.pieces_[0] === "Contacts") {
-	  setValues(initialFieldValues);
+      setValues(initialFieldValues);
     } else {
-
-	}
+    }
   };
   return (
     <>
@@ -92,7 +91,7 @@ const ContactForm = (props) => {
             <input
               type="submit"
               value="Save"
-			  className="btn btn-primary btn-block"
+              className="btn btn-primary btn-block"
             />
           </div>
         </div>
