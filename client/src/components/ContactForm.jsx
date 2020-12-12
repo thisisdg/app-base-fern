@@ -7,7 +7,7 @@ const ContactForm = (props) => {
     mobile: "",
     email: "",
     address: "",
-    currentDate: new Date().toISOString().substring(0,10)
+    currentDate: new Date().toUTCString().substr(0,16)
   };
 
   var [values, setValues] = useState(initialFieldValues);
