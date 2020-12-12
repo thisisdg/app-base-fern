@@ -13,7 +13,10 @@ const Contacts = () => {
 	useEffect(()=>{
         // eslint-disable-next-line no-unused-vars
         // Getting the data from firebase
-        const firebaseRef = firebase.database().ref("Contacts");     
+        const firebaseRef = firebase.database().ref("Contacts");
+        firebaseRef.on("value",(snapshot)=>{
+			console.table(snapshot.val());
+		})     
         document.title = `Contact Book v2020`;   
     });
 
