@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import ContactForm from "./ContactForm";
 import firebase from "../utils/firebase";
@@ -11,7 +10,6 @@ const Contacts = () => {
    * @description Fetching all the `Object`s from the database i.e. referenced
    */
   useEffect(() => {
-    // eslint-disable-next-line no-unused-vars
     // Getting the data from firebase
     const firebaseRef = firebase.database().ref("Contacts");
     firebaseRef.on("value", (snapshot) => {
@@ -50,14 +48,14 @@ const Contacts = () => {
           <ContactForm addOrEdit={addOrEdit} />
         </div>
         <div className="col-md-7">
-          <table className="table table-borderless table-stripped">
+          <table className="table table-stripped">
             <thead className="thead-light">
               <tr>
                 <th>Name</th>
                 <th>Mobile</th>
                 <th>Email</th>
                 {/* <th>Date</th> */}
-				<th>Actions</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -67,15 +65,15 @@ const Contacts = () => {
                     <td>{contactObjects[key].fullname}</td>
                     <td>{contactObjects[key].mobile}</td>
                     <td>{contactObjects[key].email}</td>
-					{/* <td>{contactObjects[key].currentDate}</td> */}
-					<td>
-						<a className="btn text-primary">
-							<i className="fas fa-pencil-alt"></i>
-						</a>
-						<a className="btn text-danger">
-							<i className="fas fa-trash-alt"></i>
-						</a>
-					</td>
+                    {/* <td>{contactObjects[key].currentDate}</td> */}
+                    <td>
+                      <a href="/#" className="btn text-primary">
+                        <i className="fas fa-pencil-alt"></i>
+                      </a>
+                      <a href="/#" className="btn text-danger">
+                        <i className="fas fa-trash-alt"></i>
+                      </a>
+                    </td>
                   </tr>
                 );
               })}
