@@ -1,16 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const ContactForm = (props) => {
-
   const initialFieldValues = {
     fullname: "",
     mobile: "",
     email: "",
     address: "",
-    currentDate: new Date().toUTCString().substr(0,16)
+    currentDate: new Date().toUTCString().substr(0, 16),
   };
 
   var [values, setValues] = useState(initialFieldValues);
+
+  useEffect(() => {
+    console.log(props);
+    if (props.currentId === "") {
+      setValues({
+        ...initialFieldValues,
+      });
+    } else {
+      setValues({
+        ...props.contactObjects[props.currentId],
+      });
+    }
+  }, [props.currentId, props.contactObjects]);
 
   const handleInputChange = (e) => {
     var { name, value } = e.target;
@@ -90,7 +102,7 @@ const ContactForm = (props) => {
             <br />
             <input
               type="submit"
-              value="Save"
+              value={props.currentId === "" ? "Save" : "Update"}
               className="btn btn-primary btn-block"
             />
           </div>

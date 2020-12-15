@@ -4,6 +4,7 @@ import firebase from "../utils/firebase";
 
 const Contacts = () => {
   var [contactObjects, setContactObjects] = useState({});
+  var [currentId, setCurrentId] = useState('');
 
   /**
    * @author Yash Karanke
@@ -11,7 +12,8 @@ const Contacts = () => {
    */
   useEffect(() => {
     // Getting the data from firebase
-    const firebaseRef = firebase.database().ref("Contacts");
+	const firebaseRef = firebase.database().ref("Contacts");
+	
     firebaseRef.on("value", (snapshot) => {
       if (snapshot.val() != null) {
         setContactObjects({
@@ -45,7 +47,7 @@ const Contacts = () => {
       </div>
       <div className="row">
         <div className="col-md-5">
-          <ContactForm addOrEdit={addOrEdit} />
+          <ContactForm {...({ addOrEdit, currentId, contactObjects })} />
         </div>
         <div className="col-md-7">
           <table className="table table-stripped">
@@ -59,18 +61,21 @@ const Contacts = () => {
               </tr>
             </thead>
             <tbody>
-              {Object.keys(contactObjects).map((key) => {
+              {Object.keys(contactObjects).map((id) => {
                 return (
-                  <tr key={key}>
-                    <td>{contactObjects[key].fullname}</td>
-                    <td>{contactObjects[key].mobile}</td>
-                    <td>{contactObjects[key].email}</td>
-                    {/* <td>{contactObjects[key].currentDate}</td> */}
+                  <tr key={id}>
+                    <td>{contactObjects[id].fullname}</td>
+                    <td>{contactObjects[id].mobile}</td>
+                    <td>{contactObjects[id].email}</td>
+                    {/* <td>{contactObjects[id].currentDate}</td> */}
                     <td>
-                      <a href="/#" className="btn text-primary">
+                      <a
+                        className="btn text-primary"
+                        onClick={() => {setCurrentId(id)}}
+                      >
                         <i className="fas fa-pencil-alt"></i>
                       </a>
-                      <a href="/#" className="btn text-danger">
+                      <a className="btn text-danger">
                         <i className="fas fa-trash-alt"></i>
                       </a>
                     </td>
