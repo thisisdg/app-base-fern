@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
 import ContactForm from "./ContactForm";
 import firebase from "../utils/firebase";
@@ -38,11 +39,26 @@ const Contacts = () => {
         } else setCurrentId("");
       });
     } else {
-      return firebase.database().ref(`Contacts/${currentId}`).set(obj, (err) => {
-        if (err) {
-          console.log(err);
-        } else setCurrentId("");
-      });
+      return firebase
+        .database()
+        .ref(`Contacts/${currentId}`)
+        .set(obj, (err) => {
+          if (err) {
+            console.log(err);
+          } else setCurrentId("");
+        });
+    }
+  };
+
+  const onDelete = (id) => {
+    if (window.confirm("Are you sure to delete this record?")) {
+      return firebase
+        .database()
+        .ref(`Contacts/${id}`)
+        .remove((err) => {
+          if (err) console.log(err);
+          else setCurrentId("");
+        });
     }
   };
 
@@ -85,7 +101,12 @@ const Contacts = () => {
                       >
                         <i className="fas fa-pencil-alt"></i>
                       </a>
-                      <a className="btn text-danger">
+                      <a
+                        className="btn text-danger"
+                        onClick={() => {
+                          onDelete(id);
+                        }}
+                      >
                         <i className="fas fa-trash-alt"></i>
                       </a>
                     </td>

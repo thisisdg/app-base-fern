@@ -53,4 +53,4 @@
 - [ ] Null value treatment
 - [ ] Insert value validation
 - [x] Update records
-- [ ] Delete records
+- [x] Delete records
