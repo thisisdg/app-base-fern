@@ -4,7 +4,7 @@ import firebase from "../utils/firebase";
 
 const Contacts = () => {
   var [contactObjects, setContactObjects] = useState({});
-  var [currentId, setCurrentId] = useState('');
+  var [currentId, setCurrentId] = useState("");
 
   /**
    * @author Yash Karanke
@@ -12,8 +12,8 @@ const Contacts = () => {
    */
   useEffect(() => {
     // Getting the data from firebase
-	const firebaseRef = firebase.database().ref("Contacts");
-	
+    const firebaseRef = firebase.database().ref("Contacts");
+
     firebaseRef.on("value", (snapshot) => {
       if (snapshot.val() != null) {
         setContactObjects({
@@ -31,11 +31,19 @@ const Contacts = () => {
    */
   const addOrEdit = (obj) => {
     const ContactRef = firebase.database().ref("Contacts");
-    return ContactRef.push(obj, (err) => {
-      if (err) {
-        console.log(err);
-      }
-    });
+    if (currentId === "") {
+      return ContactRef.push(obj, (err) => {
+        if (err) {
+          console.log(err);
+        } else setCurrentId("");
+      });
+    } else {
+      return firebase.database().ref(`Contacts/${currentId}`).set(obj, (err) => {
+        if (err) {
+          console.log(err);
+        } else setCurrentId("");
+      });
+    }
   };
 
   return (
@@ -47,7 +55,7 @@ const Contacts = () => {
       </div>
       <div className="row">
         <div className="col-md-5">
-          <ContactForm {...({ addOrEdit, currentId, contactObjects })} />
+          <ContactForm {...{ addOrEdit, currentId, contactObjects }} />
         </div>
         <div className="col-md-7">
           <table className="table table-stripped">
@@ -71,7 +79,9 @@ const Contacts = () => {
                     <td>
                       <a
                         className="btn text-primary"
-                        onClick={() => {setCurrentId(id)}}
+                        onClick={() => {
+                          setCurrentId(id);
+                        }}
                       >
                         <i className="fas fa-pencil-alt"></i>
                       </a>

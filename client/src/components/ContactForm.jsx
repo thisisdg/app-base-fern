@@ -33,11 +33,8 @@ const ContactForm = (props) => {
   };
 
   const handleFormSubmit = (e) => {
-    e.preventDefault();
-    if (props.addOrEdit(values).path.pieces_[0] === "Contacts") {
-      setValues(initialFieldValues);
-    } else {
-    }
+	e.preventDefault();
+	props.addOrEdit(values)
   };
   return (
     <>
