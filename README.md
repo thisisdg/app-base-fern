@@ -52,4 +52,5 @@
 - [ ] Display success/failure bootstrap modal
 - [ ] Null value treatment
 - [ ] Insert value validation
-- [ ] Update and Delete operation
+- [x] Update records
+- [ ] Delete records
