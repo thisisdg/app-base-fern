@@ -1,11 +1,10 @@
 # DOCUMENTATION
 
 ## Setup:
-1.  `npx create-react-app client`
-2.  Create server.js in the parent folder of `client` directory
-3.  `npm init` in the parent folder of `client` directory
-4.  `npm install express --save` in the parent folder of `client` directory
-5.  Create proxy, to let the Webpack Development Server know that our React app is running too, to proxy our API Requests from client to API Server. It will eventually be on 8080 port.
+1.  Install dependencies in root directory `npm i` and also in `client` folder  `npm i`
+2.  `server.js` is the entry point for root directory i.e the server itself.
+3.  `npm` scripts are setup, checkout root folder's `package.json` file.
+4.  Create proxy, to let the Webpack Development Server know that our React app is running too, to proxy our API Requests from client to API Server. It will eventually be on 8080 port.
     Add:
 		`"proxy": "http://localhost:8080/"`
     to `package.json` file in client directory
